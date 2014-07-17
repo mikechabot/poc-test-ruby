@@ -1,0 +1,24 @@
+start_test_server_in_background
+query("webView css:'*'")
+query("webView css:'input'")
+query("webView css:'#UserName'")
+query("webView css:'a'")
+exit
+start_test_server_in_background
+query("webView css:'a'")
+query("webView css:'a'")
+query("webView css:'a'")
+touch("webView css:'a'")
+touch("webView css:'a'")
+query("webView css:'a'")
+query("webView css:'a'")
+query("webView css:'a'")
+query("webView css:'a'")
+touch("webView css:'a'")
+query("webView css'input'")
+query("webView css:'input'")
+query("webView css:'a'")
+query("webView css:'input'")
+exit
+query("webView css:'*'")
+exit

@@ -1,6 +1,6 @@
 class Server
   
-  @valid = "https://v-training3.healthwyse.com"
+  @valid = "https://dev.healthwyse.com"
   @invalid = "https://www.google.com"
 
   @serverId = "server"

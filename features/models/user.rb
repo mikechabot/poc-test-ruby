@@ -1,12 +1,12 @@
 class User 
 
-  @validUser = "sync@healthwyse.com"
+  @validUser = "demo@healthwyse.com"
   @validPass = "123GoTeam"
 
   @invalidUser = "foobar@healthwyse.com"
   @invalidPass = "foobar"
 
-  @lockedUser = "accountlocked@healthwyse.com"
+  @lockedUser = "lockedaccount@healthwyse.com"
 
   @usernameId = "userName"
   @passwordId = "password"

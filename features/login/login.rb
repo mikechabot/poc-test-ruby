@@ -1,4 +1,4 @@
-def enterValidCredentials
+def enterCredentials(user)
    # Assert fields exsits
   assertExistsById(User.usernameId)
   assertExistsById(User.passwordId)
@@ -8,14 +8,13 @@ def enterValidCredentials
   use_keyboard(User.passwordId, user.password)
 end
 
-def pointToValidServer
+def pointDeviceTo(server)
   swipeLeft
   # Open advanced options
   touchByType("a")
-  # Assert fields exists
+  # Assert field exists
   assertExistsById(Server.serverId)
   # Enter server information
-  server = Server.getValidServer
   use_keyboard(Server.serverId, server.host)
 end
 
@@ -38,4 +37,12 @@ def assertLogoutSuccess
   # Assert the logout succeeded by checking for the login form
   assertExistsById(User.usernameId)
   assertExistsById(User.passwordId)
+end
+
+def assertLoginFailure(message)
+  sleep(3)
+  value = Hash[*(queryByClass("modal-body"))]["textContent"]
+  if !value.strip.eql? message
+    fail("Assertion failure on login failure message")
+  end
 end

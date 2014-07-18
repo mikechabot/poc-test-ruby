@@ -17,6 +17,10 @@ def queryById(id)
 	return query("webView css:'##{id}'")
 end
 
+def queryByClass(clazz)
+  return query("webView css:'.#{clazz}'")
+end
+
 def queryByType(type)
   return query("webView css:'#{type}'")
 end
@@ -25,12 +29,13 @@ def waitForById(timeout, id)
   wait_for(:timeout => timeout) { element_exists("webView css:'##{id}'") }
 end
 
-def existsById(id)
-  return element_exists("webView css:'##{id}'")
-end
-
 def assertExistsById(id)
   check_element_exists("webView css:'##{id}'")
+end
+
+def assertExistsByQuery(query)
+  puts query
+  check_element_exists("#{query}")
 end
 
 def swipeUp
